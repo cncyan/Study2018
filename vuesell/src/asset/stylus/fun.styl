@@ -1,0 +1,11 @@
+$mainColor=#62b900
+$mainseColor=#006400
+bg-img($imgurl)
+  background-image  url($imgurl+"@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image url($imgurl+"@3x.png")
+
+texteli()
+  overflow hidden;
+  white-space nowrap;
+  text-overflow ellipsis;
