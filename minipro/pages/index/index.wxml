@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='searchcon'>
+  <input type='text' name="search" placeholder='搜索心碎的宝贝'></input>
+  <button>搜索</button>
+  </view>
+  <view class="goodscon">
+    <navigator class='good' wx:for="{{goods}}">
+      <image mode='aspectFit' src='{{item.goodimg}}'></image>
+      <text>
+      {{item.goodname}} 
+      <text class='money'>{{item.goodprice}}</text>
+      </text>
+    </navigator>
+    
+  </view>
+</view>

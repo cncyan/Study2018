@@ -1,0 +1,53 @@
+/**index.wxss**/
+.searchcon{
+  height: 120rpx;
+  background: #62b900;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchcon>input{
+  height: 90rpx;
+  width: 60%;
+  background: #fff;
+  margin-left:5%;
+  border-radius: 5rpx;
+  padding-left: 15rpx;
+}
+.searchcon>button{
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 30%;
+  margin-left:2%;
+  border:none;
+}
+.goodscon{
+  width: 100%;
+  min-width: 240rpx;
+  padding: 50rpx;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: flex-start;
+}
+.good{
+  width: 45%;
+  height: auto;
+  margin-left:3.3%;
+}
+.good>image{
+  width: 250rpx;
+  height:250rpx;
+}
+.good>text{
+  font-weight: 300;
+}
+.money{
+  display: inline-block;
+  font-weight: 400;
+  color:#62b900
+}

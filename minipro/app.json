@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/aboutme/index",
+    "pages/service/index",
+    "pages/goodsdetail/index",
+    "pages/order/index"
+  ],
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"images/main.png",
+        "selectedIconPath":"images/semain.png"
+      },
+      {
+        "pagePath":"pages/aboutme/index",
+        "text":"我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/seuser.png"
+      }
+    ],
+    "selectedColor":"#009009"
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Cyan小铺",
+    "navigationBarTextStyle":"black"
+  }
+}
