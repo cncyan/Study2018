@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/book/book",
+    "pages/classic/classic",
+    "pages/book-detail/bookdetail",
+    "pages/my/my"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "乔超楠，加油！"
+  },
+  "tabBar": {
+    "color": "#7f7f7f",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/classic/classic",
+        "text": "情怀",
+        "iconPath": "images/tab/classic.png",
+        "selectedIconPath": "images/tab/classic@highlight.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "作品",
+        "iconPath": "images/tab/book.png",
+        "selectedIconPath": "images/tab/book@highlight.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "喜欢",
+        "iconPath": "images/tab/my.png",
+        "selectedIconPath": "images/tab/my@highlight.png"
+      }
+    ]
+  }
+}
