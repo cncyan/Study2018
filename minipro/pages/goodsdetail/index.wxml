@@ -1,2 +1,39 @@
 <!--pages/goodsdetail/index.wxml-->
-<text>pages/goodsdetail/index.wxml</text>
+<view class="gooddetailcon">
+  <swiper class="swiper-box" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+  </swiper>
+  <view class='titlecan'>
+     <text class='goodname'>{{gooddetail.goodname}}</text> 
+    <text class='money'>{{gooddetail.goodprice}}元</text>
+  </view>
+  <view class="goodsdesc">
+    <view class='desctext'>
+      <text class='desctitle'>产品介绍</text>
+      <text class='con' wx:for="{{gooddetail.desctext}}" wx:key="{{index}}">{{item}}</text>
+    </view>
+    <view class='imgdesccan'>
+      <text class='desctitle'>图片详情</text>
+      <view class='imgcan'>
+        <image wx:for="{{gooddetail.descimg}}" wx:key="{{index}}" class='descimg'  src='{{item}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='detailfoot'>
+  <!-- <view class='goodicon'>
+    <text class='carnum'>{{num}}</text>
+  </view>
+  <button class='addbtn' bindtap="addgood">加入购物车</button> -->
+  <view >
+  </view>
+  <button></button>
+  <button class='orderbtn'>立即下单
+     <text class='smalltext'>支持到付</text>
+  </button>
+</view>

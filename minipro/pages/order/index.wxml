@@ -1,2 +1,16 @@
 <!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<view class='ordercan'>
+  <view class='order'>
+    <image class='orderlogo'></image>
+    <view class='ordername'>
+      <view class='ordertext'>茭白三丝茭白三丝茭白三丝茭白三丝茭白茭白茭白茭白</view>
+      <text class='ordernum'>订单号：12423432432948</text>
+    </view>
+    <text class='ordersattus'>已发货</text>
+    <view class='wuliu showwuliu' bindtap='toggleshow'>{{showdetail ? '隐藏' : '显示'}}</view>
+  </view>
+  <view class='{{showdetail ? "wuliudetail" : "hide"}}'>
+    <!-- <web-view src="http:www.baidu.com"></web-view> 业务域名配置后可用 -->
+    快件物流内容内容物流内容
+  </view>
+</view>

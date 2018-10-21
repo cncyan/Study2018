@@ -10,36 +10,43 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     goods: [
       {
+        id:1,
+        goodimg: "../../images/goods/apple.jpg",
+        goodname: "茭白三丝茭白三丝茭白三丝",
+        goodprice: "12元/500g"
+      },
+      {
+        id: 2,
         goodimg: "../../images/goods/apple.jpg",
         goodname: "茭白三丝",
         goodprice: "12元/500g"
       },
       {
+        id: 3,
         goodimg: "../../images/goods/apple.jpg",
         goodname: "茭白三丝",
         goodprice: "12元/500g"
       },
       {
+        id: 4,
         goodimg: "../../images/goods/apple.jpg",
         goodname: "茭白三丝",
         goodprice: "12元/500g"
       },
       {
+        id: 5,
         goodimg: "../../images/goods/apple.jpg",
         goodname: "茭白三丝",
         goodprice: "12元/500g"
       },
       {
+        id: 6,
         goodimg: "../../images/goods/apple.jpg",
         goodname: "茭白三丝",
         goodprice: "12元/500g"
       },
       {
-        goodimg: "../../images/goods/apple.jpg",
-        goodname: "茭白三丝",
-        goodprice: "12元/500g"
-      },
-      {
+        id: 7,
         goodimg: "../../images/goods/apple.jpg",
         goodname: "茭白三丝",
         goodprice: "12元/500g"
@@ -80,12 +87,28 @@ Page({
     //   })
     // }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+  detail:function(e){
+    var goodid=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url:'../goodsdetail/index?id='+goodid
     })
+  },
+  searchgood:function(){
+    // wx:wx.request({
+    //   url: '',
+    //   data: '',
+    //   header: {},
+    //   method: 'GET',
+    //   dataType: 'json',
+    //   responseType: 'text',
+    //   success: function (res) {
+    //     var _that = this;
+    //     this.setData({
+    //       goods=res.data;
+    //     })
+    //   },
+    //   fail: function(res) {},
+    //   complete: function(res) {},
+    // })
   }
 })

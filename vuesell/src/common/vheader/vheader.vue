@@ -11,8 +11,8 @@
           <div class="cyandiscourt">
             <i class="iconfont icon-youhui cyanicon"></i>
             <span>折扣多多，预购从速</span>
-            <button v-if="!showyouhui" @click="toggyhui" class="cyandiscourtBtn"><i class="iconfont icon-xiangxia"></i> </button>
-            <button v-else @click="toggyhui" class="cyandiscourtBtn"><i class="iconfont icon-xiangshang"></i> </button>
+            <button v-if="!showyouhui" @click="toggyhui" class="cyandiscourtBtn border"><i class="iconfont icon-xiangxia"></i> </button>
+            <button v-else @click="toggyhui" class="cyandiscourtBtn border"><i class="iconfont icon-xiangshang"></i> </button>
           </div>
         </div>
       </div>

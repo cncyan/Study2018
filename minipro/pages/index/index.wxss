@@ -1,4 +1,7 @@
 /**index.wxss**/
+.container{
+  background-color: #eee;
+}
 .searchcon{
   height: 120rpx;
   background: #62b900;
@@ -38,16 +41,30 @@
   width: 45%;
   height: auto;
   margin-left:3.3%;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  cursor: pointer;
 }
 .good>image{
   width: 250rpx;
   height:250rpx;
 }
 .good>text{
+  float: left;
+  margin-left: 25rpx;
   font-weight: 300;
+  font-size: 34rpx;
+  text-align: left;
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .money{
   display: inline-block;
   font-weight: 400;
-  color:#62b900
+  color:#62b900;
+  font-size: 30rpx;
 }

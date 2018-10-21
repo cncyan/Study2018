@@ -4,7 +4,9 @@
     "pages/aboutme/index",
     "pages/service/index",
     "pages/goodsdetail/index",
-    "pages/order/index"
+    "pages/order/index",
+    "pages/adress/index"
+
   ],
   "tabBar":{
     "list":[

@@ -1,1 +1,54 @@
 /* pages/order/index.wxss */
+.ordercan{
+  width: 100%;
+  overflow: auto;
+}
+.order{
+  width:90%;
+  margin:auto;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+  border:6rpx dotted #eee;
+}
+.orderlogo{
+  width: 150rpx;
+  height:150rpx;
+  border:6rpx solid #eee;
+  border-radius: 15rpx;
+}
+.ordername{
+  color: #ccc;
+  font-size: 30rpx;
+  margin-left:30rpx;
+  max-width: 30%;
+  position:relative;
+}
+.ordertext{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+.ordernum{
+  position:absolute;
+  bottom:-40rpx;
+  color:#000;
+  font-size:25rpx;
+  width:240%;
+}
+.ordersattus{
+  margin-left:50rpx;
+  font-size: 30rpx;
+}
+.wuliu{
+ float: right;
+ padding: 6rpx;
+ font-size: 30rpx;
+ border:4rpx solid #eee;
+ border-radius: 10rpx;
+}
+.hide{
+  display: none;
+}

@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showdetail:false,
+    id:"0"
 
   },
 
@@ -63,4 +65,14 @@ Page({
   onShareAppMessage: function () {
 
   }
+,
+
+// 隐藏显示物流
+toggleshow:function(e){
+  var _that=this;
+  console.log(e.currentTarget.dataset)
+  this.setData({
+    showdetail: !_that.data.showdetail
+  })
+}
 })

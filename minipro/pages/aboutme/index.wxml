@@ -1,2 +1,20 @@
 <!--pages/aboutme/index.wxml-->
-<text>pages/aboutme/index.wxml</text>
+<view class='mecan'>
+  <view class='personalme'>
+     <image class='myicon' src='../../images/user.png'></image>
+     <view class='myname'>
+       <text>Name: cyan</text>
+       <text>Tel：17600483029</text>
+     </view>
+  </view>
+  <view class='models'>
+     <navigator url='../order/index'>
+       <text class='navtext'>我的订单</text>
+       <text>进入</text>
+     </navigator>
+     <navigator url='../adress/index'>
+       <text class='navtext'>管理地址</text>
+       <text>进入</text>
+     </navigator>
+  </view>
+</view>
