@@ -11,24 +11,24 @@
     ],
     "techessay":[
       {
-        "tetitle":"nihaohibd",
-        "tecontent":"xidfhdkfhksdfhsdfhsd",
-        "teimgurl":"https://www.baidu.com"
+        "title":"nihaohibd",
+        "content":"xidfhdkfhksdfhsdfhsd",
+        "imgurl":"t1.jpg"
       },{
-        "tetitle":"nihaohibd",
-        "tecontent":"xidfhdkfhksdfhsdfhsd",
-        "teimgurl":"https://www.baidu.com"
+        "title":"nihaohibd",
+        "content":"xidfhdkfhksdfhsdxidfhdkfhksxidfhdkfhksdfhsdfhsddfhsdfhsdxidfhdkfhksdfhsdfhsdxidfhdkfhksdfhsdfhsdfhsd",
+        "imgurl":"t2.jpg"
       }
     ],
     "lifeessay":[
       {
-        "lifetitle":"ncsdis",
-        "lifecontent":"nihaonsdjhfk",
-        "lifeimgurl":"csdhkbhdsfjds"
+        "title":"ncsdis",
+        "content":"nihaonsdjhfk",
+        "imgurl":"l1.jpg"
       },{
-        "lifetitle":"ncsdis",
-        "lifecontent":"nihaonsdjhfk",
-        "lifeimgurl":"csdhkbhdsfjds"
+        "title":"ncsdis",
+        "content":"nihaonsdjhfk",
+        "imgurl":"l2.jpg"
       }
     ],
     "selfdesc":{

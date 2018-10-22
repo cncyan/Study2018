@@ -2,6 +2,7 @@
   function myself(opt){
     this.opt=opt;
   }
+  /*获取url参数*/
   myself.prototype.geturloptions=function(url){
     if(url=='') return false
     if(url.split("?").length <= 1){
@@ -17,11 +18,13 @@
       return options
     }
   }
-
+ /*获取当前url路由值*/
   myself.prototype.geturlaccrentpage=function(){
     let hrefnum=win.location.host.length
     return win.location.href.split("//")[1].slice(hrefnum);
   }
+
+
 
   win.me=new myself()
 })(window,document)

@@ -40,8 +40,7 @@ export default {
     width 100%
     height 1rem
     line-height 1rem
-    position fixed
-    bottom 0
+    background #f7f7f7
     ul
       width 100%
       display flex

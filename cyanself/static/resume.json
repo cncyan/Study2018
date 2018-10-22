@@ -2,10 +2,10 @@
   "data":{
     "mydesc":{
       "myname":"xxsasa",
-      "mybirth":"ksdhksada",
-      "myhome":"csdkhf",
-      "myschool":"xadgfkadg",
-      "myicon":"gajhdfg"
+      "mybirth":"1995.06.15",
+      "myphone":"17600483029",
+      "myschool":"沈阳航空航天大学",
+      "myicon":"myicon.jpg"
     },
     "eduandwork":[
       {
@@ -58,6 +58,17 @@
         "time":"2018/09/07",
         "desc":"sdkdfds",
         "myjob":"cshdkjf"
+      }
+    ],
+    "footicon":[
+      {
+        "id":"1",
+        "foottext":"首页",
+        "gourl":"/"
+      },{
+        "id":"2",
+        "foottext":"关于我",
+        "gourl":"/aboutme"
       }
     ]
   }
