@@ -33,6 +33,7 @@
       border 1px solid #ddd
       display flex
       justify-content space-around
+      border-radius 0.2rem
       .esicon
         width 28%
         height 0
@@ -40,7 +41,7 @@
       .estext
         width 60%
         h3
-          font-size 20px
+          font-size 16px
           margin 0.2rem 0
           overflow hidden
           text-overflow ellipsis
@@ -48,11 +49,7 @@
         p
           width 85%
           word-wrap break-word
-          font-size 16px
+          font-size 14px
           line-height 0.6rem
-          overflow hidden
-          text-overflow ellipsis
-          display -webkit-box
-          -webkit-box-orient vertical
-          -webkit-line-clamp 3
+          elli(3)
 </style>

@@ -10,21 +10,19 @@
     "eduandwork":[
       {
         "id":"1",
+        "sign":"aaaa",
         "time":"2018/09/07",
         "name":"sdkdfds",
         "job":"cshdkjf"
       },{
         "id":"2",
+        "sign":"bbbb",
         "time":"2018/09/07",
         "name":"sdkdfds",
         "job":"cshdkjf"
       },{
         "id":"3",
-        "time":"2018/09/07",
-        "name":"sdkdfds",
-        "job":"cshdkjf"
-      },{
-        "id":"4",
+        "sign":"cccc",
         "time":"2018/09/07",
         "name":"sdkdfds",
         "job":"cshdkjf"
@@ -45,21 +43,48 @@
     "projects":[
       {
         "id":"1",
+        "title":"项目一",
         "time":"2018/09/07",
+        "name":"你好",
         "desc":"sdkdfds",
         "myjob":"cshdkjf"
       },{
         "id":"2",
+        "title":"项目er",
         "time":"2018/09/07",
+        "name":"你好",
         "desc":"sdkdfds",
         "myjob":"cshdkjf"
       },{
         "id":"3",
+        "title":"项目th",
         "time":"2018/09/07",
+        "name":"你好",
         "desc":"sdkdfds",
         "myjob":"cshdkjf"
       }
     ],
+    "likes":[
+      {
+        "id":"1",
+        "iconurl":"1.jpg",
+        "content":"csddsds"
+      },{
+        "id":"2",
+        "iconurl":"1.jpg",
+        "content":"csddsds"
+      },{
+        "id":"3",
+        "iconurl":"1.jpg",
+        "content":"csddsds"
+      }
+    ],
+    "selfdesc":{
+      "codeurl":"1.jpg",
+      "selfwechat":"dsdfsdfsdf",
+      "selfblog":"dshjfsd",
+      "selfmini":"qweweq"
+    },
     "footicon":[
       {
         "id":"1",

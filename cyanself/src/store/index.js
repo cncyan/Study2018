@@ -4,7 +4,13 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state={
-  activefoot:"home"
+  activefoot:"home",
+  selfdesc:{
+    "codeurl":"1.jpg",
+    "selfwechat":"dsdfsdfsdf",
+    "selfblog":"dshjfsd",
+    "selfmini":"qweweq"
+  }
 }
 const mutations={
   changeFoot(state,activestate){

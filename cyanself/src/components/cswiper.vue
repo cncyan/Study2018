@@ -3,9 +3,6 @@
     <swiper-slide v-for="(item,index) in datalist" :key="index">
       <img :src="item" />
     </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/images/1.jpg"/>
-    </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 </template>
