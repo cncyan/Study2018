@@ -1,0 +1,8 @@
+<!--components/person/index.wxml  -->
+<view class='percontainer'>
+  <image class='pericon' src='{{cdata.icon}}'></image>
+  <view class='persaycon'>
+     <text class='pername'>{{cdata.name}}<text class='perjob'>({{cdata.job}})</text></text>
+     <text class='persay tag'>{{cdata.say}}</text>
+  </view>
+</view>

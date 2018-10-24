@@ -1,6 +1,9 @@
 <template>
     <div class="aboutme">
       <div class="maincan">
+        <span style="position: absolute;right:0.2rem">
+          <a href="../assets/file/乔超楠17600483028.pdf" download>简历下载</a>
+        </span>
         <c-myinfo class="myinfo" :datalist="baseinfos"></c-myinfo>
         <hr id="mainhr"/>
         <h2 class="h2title">教育以及工作经验</h2>

@@ -1,0 +1,29 @@
+/**index.wxss**/
+.container{
+  margin:0;
+  padding:0;
+}
+.eassycon{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border:1px solid #eee;
+  padding:0.3rem;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  color:#ddd;
+  border-radius: 0.2rem;
+  width: 70%;
+  word-break: break-all;
+}
+.module{
+  width:95%;
+}
+.startbtn{
+  width: 40%;
+  margin:auto;
+  margin-top:1.5rem
+}
+.q1con{
+  padding: 1rem;
+  font-size: 0.6rem;
+}

@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='eassycon'>
+    智商测试，测试你的智商下限,群中有奥利维亚，特洛夫斯基等诸多大咖，嘻嘻，嘻嘻，开始吧
+    <text>ninini</text>
+  </view>
+  <view>
+  <view style='opacity:{{op}};margin-left:{{mr}}rpx;transition:all {{(index+1)*2*0.3}}s linear  {{(index+1)*2*0.3}}s ;' class="module" wx:for="{{listboss}}" wx:key="index">
+    <c-person cdata="{{item}}"/>
+  </view>
+
+  <button class='startbtn' style='opacity:{{proop}};transition:all {{(listboss.length)*0.3}}s linear  {{(listboss.length)*4*0.3}}s ;' bindtap='startgame'>开始</button>
+
+  <view style='opacity:{{op}};margin-left:{{mr}}rpx;transition:all {{(index+1)*2*0.3}}s linear  {{(index+1)*2*0.3}}s ;' class="module" wx:for="{{listcoco}}" wx:key="index">
+    <c-person cdata="{{item}}"/>
+  </view>
+  <view class='q1con' style='opacity:{{q1op}};transition:all {{(listcoco.length)*0.3}}s linear  {{(listcoco.length)*4*0.3}}s ;'>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{questions.q1}}" wx:key="index">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+
+
+  <view style='opacity:{{op}};margin-left:{{mr}}rpx;transition:all {{(index+1)*2*0.3}}s linear  {{(index+1)*2*0.3}}s ;' class="module" wx:for="{{listlast}}" wx:key="index">
+    <c-person cdata="{{item}}"/>
+  </view>
+  <view class='q1con' style='opacity:{{q2op}};transition:all {{(listlast.length)*0.3}}s linear  {{(listlast.length)*4*0.3}}s ;'>呵呵...你怕是穷疯了吧    
+  </view>
+
+  
+  </view>
+  
+</view>
