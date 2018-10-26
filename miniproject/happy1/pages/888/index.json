@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-vedio": "/components/vedio/index",
+     "c-pic": "/components/picture/index",
+     "c-act": "/components/activity/index"
+  }
+}

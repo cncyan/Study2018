@@ -1,0 +1,25 @@
+<!--pages/888/index.wxml-->
+<view class='container'>
+<!-- 视频模块 -->
+<view>
+ <c-vedio data="{{src}}"/>
+</view>
+<!-- 活动介绍 -->
+<view>
+ <c-act/>
+<button bindtap='showmassage'>回家看看</button>
+</view>
+<!-- 个人信息提交 -->
+<view wx:if="{{showinfo}}">
+    <text>个人信息提交页面</text>
+    <input>nindisa</input>
+    <button bindtap='create'>提交信息开始生成</button>
+</view>
+<!-- 生产工卡以及后续 -->
+<view>
+ <c-pic bind:yesgo="arrive" bind:nogo="noarrive" id="myicture" picdatas="{{pics}}" perdata="{{person}}" />
+</view>
+
+
+ <!-- <button open-type='share'>分享</button> -->
+</view>

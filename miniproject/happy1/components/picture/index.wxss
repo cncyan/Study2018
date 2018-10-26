@@ -1,0 +1,62 @@
+/* components/picture/index.wxss */
+.piccon{
+  width: 100%
+}
+.swipercon{
+  width: 60%;
+  margin:auto
+}
+.waitword{
+  display: block;
+  font-size: 0.6rem;
+  height:1rem;
+  padding: 0.2rem;
+  width: 5rem;
+  margin:auto;
+  border: 1px solid #eee;
+  background: red;
+  border-radius: 0.2rem;
+  text-align: center;
+  line-height: 1rem;
+  color:yellow;
+  margin-top:0.5rem;
+}
+
+
+
+@keyframes wordsLoop {
+            0% {
+                transform: translateX(0px);
+                -webkit-transform: translateX(0px);
+            }
+            100% {
+                transform: translateX(70%);
+                -webkit-transform: translateX(70%);
+            }
+        }
+
+@-webkit-keyframes wordsLoop {
+    0% {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(70%);
+        -webkit-transform: translateX(70%);
+    }
+}
+.gogoword {
+  display: inline-block;
+  white-space: nowrap;
+  animation: 1s wordsLoop linear infinite normal;
+}
+
+
+.cadecode{
+  width: 4rem;
+  height:4rem;
+}
+
+
+.canvasStyle{width:202px;height:312px;border:1rpx solid #000;margin:20rpx auto;position:relative;}
+.canvasStyle canvas{width:100%;height:100%;margin:1px 0 0 1px; background:none;position:relative;z-index:10;}

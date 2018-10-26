@@ -1,0 +1,7 @@
+<!--components/activity/index.wxml-->
+<view class='actcon'>
+  <text class='acttitle'>追梦赤子心，触控8周年</text>
+  <view>
+    <text>亲爱的我们回来了</text>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "c-person": "/components/person/index"
+  }
+}

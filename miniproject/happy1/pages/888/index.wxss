@@ -1,0 +1,9 @@
+/* pages/888/index.wxss */
+.container{
+  width: 100%;
+  margin:0;
+  padding: 0.3rem;
+}
+.container>view{
+  width: 98%
+}

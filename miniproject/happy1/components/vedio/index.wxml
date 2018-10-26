@@ -1,0 +1,11 @@
+<view >
+ <video id='myvedio' bindended="endvedio" style="width: 100%;height=400px;margin:1px;" src="{{data}}" binderror="videoErrorCallback">
+ <cover-view wx:if="{{show}}"  bindtap="playvedio" class='coversrc' style='position:relative'>
+     <cover-image class='img' src='../../images/ni.jpg'></cover-image>
+     <cover-view class='playbtn'>
+        <cover-image src='../../images/play.jpg'></cover-image>
+     </cover-view>
+ </cover-view>
+ 
+ </video>
+</view>
