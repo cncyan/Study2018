@@ -1,7 +1,7 @@
 {
   "data":{
     "mydesc":{
-      "myname":"xxsasa",
+      "myname":"乔超楠",
       "mybirth":"1995.06.15",
       "myphone":"17600483029",
       "myschool":"沈阳航空航天大学",
@@ -10,58 +10,84 @@
     "eduandwork":[
       {
         "id":"1",
-        "sign":"aaaa",
-        "time":"2018/09/07",
-        "name":"sdkdfds",
-        "job":"cshdkjf"
+        "sign":"本科",
+        "time":"2014.08.30-2018.07.06",
+        "name":"沈阳航空航天大学",
+        "job":"软件工程"
       },{
         "id":"2",
-        "sign":"bbbb",
-        "time":"2018/09/07",
-        "name":"sdkdfds",
-        "job":"cshdkjf"
+        "sign":"实习",
+        "time":"2017.07.24-2018.07.10",
+        "name":"触控科技",
+        "job":"web前端开发实习生"
       },{
         "id":"3",
-        "sign":"cccc",
-        "time":"2018/09/07",
-        "name":"sdkdfds",
-        "job":"cshdkjf"
+        "sign":"工作",
+        "time":"2018.07.10-至今",
+        "name":"触控科技",
+        "job":"web前端开发工程师"
       }
     ],
     "skills":[
       {
         "id":"1",
-        "content":"csddsds"
+        "content":"HTML / CSS / JavaScript等前端基础语言的掌握；"
       },{
         "id":"2",
-        "content":"csddsds"
+        "content":"Jquery / Bootscript等基础框架以及相关插件的掌握；"
       },{
         "id":"3",
-        "content":"csddsds"
+        "content":"Vue / Vuex / Vue-router / Stylus以及Vue-cli脚手架/ Axios异步数据处理的掌握；"
+      },{
+        "id":"4",
+        "content":"Photoshop使用以及Iconfont字体的生成与使用需求整理；"
+      },{
+        "id":"5",
+        "content":"微信小程序的开发；"
+      },{
+        "id":"6",
+        "content":"Php / MySQL以及ThinkPHP建站知识的掌握；"
+      },{
+        "id":"7",
+        "content":"Webpack 的掌握, Git以及SVN的使用"
       }
     ],
     "projects":[
       {
+        "id":"5",
+        "title":"触控八周年小程序",
+        "time":"2018.10-至今",
+        "name":"触控八周年小程序",
+        "desc":"针对老员工参加触控八周年的征集令",
+        "myjob":"小程序开发以及接口连调"
+      },{
         "id":"1",
-        "title":"项目一",
-        "time":"2018/09/07",
-        "name":"你好",
-        "desc":"sdkdfds",
-        "myjob":"cshdkjf"
+        "title":"CoCos官网",
+        "time":"2018.07-至今",
+        "name":"CoCos官网",
+        "desc":"官网首页以及动态当中周报页面的Pc以及移动端开发，其游戏管理系统开发（CP主页，登陆以及我的游戏页面开发；渠道端主页，小游戏审核，上下架，位置调整等页面的开发实现）",
+        "myjob":"官网前端开发，接口连调以及后期维护    「官网地址：」http://blog.coculm.cn/  「游戏管理后台：」cp.jeekegame.com（CP）   channel.jeekegame.com（渠道）"
       },{
         "id":"2",
-        "title":"项目er",
-        "time":"2018/09/07",
-        "name":"你好",
-        "desc":"sdkdfds",
-        "myjob":"cshdkjf"
+        "title":"路由器广告聚合网站",
+        "time":"2018.08-2018.10",
+        "name":"路由器广告聚合网站",
+        "desc":"Linkplus官网以及相关广告活动内容，H5活动宣传",
+        "myjob":"vue-cli实现网站宣传页面，活动订单以及个人模块的搭建以及数据接口的联调，后续H5宣传页面的完成"
       },{
         "id":"3",
-        "title":"项目th",
-        "time":"2018/09/07",
-        "name":"你好",
-        "desc":"sdkdfds",
-        "myjob":"cshdkjf"
+        "title":"智慧搜ASM",
+        "time":"2017.08-2017.11",
+        "name":"智慧搜ASM",
+        "desc":"智慧搜是一个搜索广告解决方案平台，提供aso以及即将在中国区开放的ASM服务，主要进行app store中应用打榜类广告",
+        "myjob":"前端开发，接口联调 链接：https://asm.chance-ad.com「后期已不在维护」"
+      },{
+        "id":"4",
+        "title":"汽车信息管理网站",
+        "time":"2015.11-2015.12",
+        "name":"汽车信息管理网站",
+        "desc":"整个项目的规划，结构的思考设计以及整站的开发",
+        "myjob":"整个项目的规划，结构的思考设计以及整站的开发"
       }
     ],
     "likes":[
