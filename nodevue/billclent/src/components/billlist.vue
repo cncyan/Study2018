@@ -1,38 +1,33 @@
 <template>
     <div class="billlist">
         <div class="billtitle">
-            <h3>收入</h3>
-            <span class="titledesc">（2018.09明细）</span>
+            <h3>{{billdata.title}}</h3>
+            <span class="titledesc">（{{billdata.mday}}）</span>
         </div>
         <ul class="mainbill">
-            <li class="billitem">
+            <li class="billitem" v-for="item in billdata.datalist" :key="item.od">
                 <div class="itemtop">
-                    <span class="itemmoney">123￥</span>
-                    <span class="itemdata">09.11</span>
-                    <span class="itemtype">进入支付宝</span>
-                    <span class="itemsign">标标签标签标签签</span>
+                    <span class="itemmoney">{{item.money}}￥</span>
+                    <span class="itemdata">{{item.date}}</span>
+                    <span class="itemtype">{{item.come}}</span>
+                    <span class="itemsign">{{item.sign}}</span>
                 </div>
-                <p class="itemdesc">备注备注备注</p>
-            </li>
-            <li class="billitem">
-                <div class="itemtop">
-                    <span class="itemmoney">123￥</span>
-                    <span class="itemdata">09.11</span>
-                    <span class="itemtype">进入支付宝</span>
-                    <span class="itemsign">标标签标签标签签</span>
-                </div>
-                <p class="itemdesc">备注备注备注</p>
+                <p class="itemdesc">{{item.desc}}</p>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
-    export default {}
+    export default {
+        props:{
+            billdata:Object
+        }
+    }
 </script>
 
 <style lang="stylus" scoped>
-    @import "../assets/css/base.styl";
+    /*@import "../assets/css/base.styl";*/
     .billlist
         width 100%
         padding 0.2rem
@@ -60,13 +55,18 @@
                 padding 0.1 rem
                 border 0.02rem solid $mainColor
                 margin 0.3rem 0
+                width 100%
+                box-sizing border-box
+                border-radius 0.1rem
+                padding-left 0.2rem
                 .itemtop
                     width 100%
                     display flex
                     align-items baseline
                     margin-top 0.2rem
+                    margin-bottom 0.2rem
                     .itemmoney
-                        font-size 0.6rem
+                        font-size 0.5rem
                     .itemdata,.itemtype,.itemsign
                         text-align center
                         border 0.02rem solid #999
@@ -74,6 +74,7 @@
                         margin 0.1rem
                 .itemdesc
                     color #999
+                    margin-bottom 0.2rem
                     textell()
 
 

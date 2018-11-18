@@ -29,7 +29,7 @@
 </script>
 
 <style lang="stylus">
-    @import "../assets/css/base.styl";
+    /*@import "../assets/css/base.styl";*/
     .logincon
         border:1px solid $mainColor
         .formcon

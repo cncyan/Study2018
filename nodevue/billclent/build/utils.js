@@ -29,6 +29,18 @@ exports.cssLoaders = function (options) {
     }
   }
 
+
+  //cyan change all
+  const stylusOptions = {
+      import: [
+          path.join(__dirname, "../static/css/base.styl"), // variables.styl全局变量文件
+      ],
+      paths: [
+          path.join(__dirname, "../static/css"),
+          path.join(__dirname, "../"),
+      ],
+  }
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
@@ -61,8 +73,8 @@ exports.cssLoaders = function (options) {
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
-    stylus: generateLoaders('stylus'),
-    styl: generateLoaders('stylus')
+    stylus: generateLoaders('stylus', stylusOptions),
+    styl: generateLoaders('stylus', stylusOptions),
   }
 }
 

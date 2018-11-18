@@ -1,17 +1,14 @@
 <template>
   <div class="home">
     <div class="hometop">
-      <div class="hoset">
-        <img class="setimg" src="../assets/imgs/set.jpg"/>
-      </div>
       <div class="homain">
         <div class="maincon">
           <div class="cil smcil">
-            收入：<br/>1234万¥
+            收入：<br/>{{totalmoney.getmoney}}¥
           </div>
           <div class="cil bgcil" @click="addbill"></div>
           <div class="cil smcil">
-            支出：<br/>1万¥
+            支出：<br/>{{totalmoney.gavemoney}}¥
           </div>
         </div>
       </div>
@@ -20,15 +17,20 @@
         <span class="wechatbill">绑定微信账单</span>
       </div>
     </div>
-    <billlist></billlist>
-    <div class="shadow"></div>
-    <div class="recordbill">
+    <billlist :billdata="getmoney"></billlist>
+    <billlist :billdata="gavemoney"></billlist>
+    <billfoot :actwords="current" class="hofoot"></billfoot>
+    <div v-if="isshadow" class="shadow" @click="clearshadow"></div>
+    <div v-if="isaddbill" class="recordbill">
       <div class="inputgroup">
         <label>账目类型</label>
-        <select class="billtype" name="billtype">
-          <option value="1">记账</option>
-          <option value="2">支出</option>
-        </select>
+        <div class="billtype">
+          <select name="billtype">
+            <option value="1">记账</option>
+            <option value="2">支出</option>
+          </select>
+          <span class="iconfont icon-down downicon"></span>
+        </div>
       </div>
       <div class="inputgroup">
         <label>资金</label>
@@ -36,49 +38,131 @@
       </div>
       <div class="inputgroup">
         <label>日期</label>
-        <input class="billdate" type="date" name="billdate" />
+        <input class="billdate" value="2018-11-12" type="date" name="billdate" />
       </div>
       <div class="inputgroup">
         <label>资金标签</label>
         <div class="billsign">
-          <span>
+          <label>
             <input class="bankradio" type="radio" name="billsign" value="1" />
-            <span class="b-radio"></span>吃
-          </span>
-          <span>
+            <span class="b-radio"></span>
+            <p class="signcon">吃</p>
+          </label>
+          <label>
             <input class="bankradio" type="radio" name="billsign" value="2" />
-            <span class="b-radio"></span>住
-          </span>
-          <span>
+            <span class="b-radio"></span>
+            <p class="signcon">吃</p>
+          </label>
+          <label>
             <input class="bankradio" type="radio" name="billsign" value="3" />
-            <span class="b-radio"></span>行
-          </span>
-          <span>新增</span>
+            <span class="b-radio"></span>
+            <p class="signcon">吃</p>
+          </label>
+          <label class="addsign" @click="showaddsign"><span class="iconfont icon-add"></span></label>
         </div>
-
+      </div>
+      <div class="inputgroup inputsign" v-if="isaddsign">
+        <label class="othersignlabel">新标签:</label>
+        <input class="othersign" maxlength="2" placeholder="最多输入两个字" type="text" name="othersign" />
+        <button class="signok" @click="canceladdsign">取消</button>
+        <button class="signok" @click="addsign">完成</button>
       </div>
       <div class="inputgroup">
         <label>备注</label>
         <input class="billdesc" type="text" name="billdesc" />
       </div>
+      <button class="notsdd" @click="clearshadow">取消</button>
+      <button class="suresdd">确定</button>
     </div>
   </div>
 </template>
 
 <script>
   import billlist from '../components/billlist.vue'
+  import billfoot from '../components/billfoot.vue'
   export default {
     components:{
-      billlist
+      billlist,
+      billfoot
     },
     data(){
       return {
-        nono:false
+        // addbill 弹出层
+          isshadow:false,
+          isaddbill:false,
+        //addsign
+          isaddsign:false,
+        //虚拟数据
+          current:'home',
+          totalmoney:{
+              getmoney:"1234万",
+              gavemoney:"0"
+          },
+          getmoney:{
+              title:"收入",
+              mday:"最近30天",
+              datalist:[
+                  {
+                      id:'1',
+                      money:'123',
+                      date:'2018.01.11',
+                      come:"进入支付宝",
+                      sign:'吃',
+                      desc:'好的可以还行加油'
+                  },
+                  {
+                      id:'2',
+                      money:'123',
+                      date:'2018.01.11',
+                      come:"进入支付宝",
+                      sign:'吃',
+                      desc:'好的可以还行加油'
+                  }
+              ]
+
+          },
+          gavemoney:{
+              title:"支出",
+              mday:"最近30天",
+              datalist:[
+                  {
+                      id:'1',
+                      money:'123',
+                      date:'2018.01.11',
+                      come:"进入支付宝",
+                      sign:'吃',
+                      desc:'好的可以还行加油'
+                  },
+                  {
+                      id:'2',
+                      money:'123',
+                      date:'2018.01.11',
+                      come:"进入支付宝",
+                      sign:'吃',
+                      desc:'好的可以还行加油'
+                  }
+              ]
+
+          }
       }
     },
     methods:{
       addbill:function(){
-        console.log(111)
+        this.isshadow=true
+        this.isaddbill=true
+      },
+      clearshadow:function(){
+        this.isshadow=false
+        this.isaddbill=false
+      },
+      showaddsign:function(){
+          this.isaddsign=true
+      },
+      addsign:function(){
+          this.isaddsign=false
+      },
+      canceladdsign:function(){
+          this.isaddsign=false
       }
     }
   }
@@ -90,20 +174,11 @@
     padding 0
     font-size 0.4rem
     position relative
+    padding-bottom 1.4rem
     .hometop
       width 100%
       border-bottom 0.02rem solid red
       padding-bottom 0.2rem
-      .hoset
-        width 100%
-        height 0.8rem
-        position relative
-        .setimg
-          width 0.6rem
-          height 0.6rem
-          position absolute
-          right 0.2rem
-          top 0.2rem
       .homain
         width 100%
         height 2.8rem
@@ -149,12 +224,26 @@
     .recordbill
       width 90%
       position absolute
-      top 50%
+      top 15%
       background rgba(255,255,255,1)
       padding 0.4rem
       left 50%
       margin-left -45%
       box-sizing border-box
+      .suresdd,.notsdd
+        width 40%
+        height 1rem
+        line-height 1rem
+        background $mainColor
+        color #fff
+        border-radius 0.1rem
+        display inherit
+        border none
+        display inline-block
+        margin 4.5%
+        box-sizing border-box
+      .notsdd
+        background #969896
       .inputgroup
         width 100%
         padding 0 0.2rem
@@ -163,48 +252,114 @@
         margin 0.3rem 0
         min-height 1rem
         align-items center
+        .othersignlabel
+          font-size 0.3rem
+          text-align right
+          padding-right 0.3rem
         label
           font-size 0.5rem
           width 30%
+          color #999
           textell()
-        .billtype,.billmoney,.billdate,.billdesc
+        .billtype,.billmoney,.billdate,.othersign,.billdesc
           height 0.8rem
           border 0.02rem solid #999
           border-radius 0.1rem
           flex 1
+          padding-left 0.2rem
+        .signok
+          min-width 1.3rem
+        .billtype
+          //用div的样式代替select的样式
+          /*width: */
+          height: 0.8rem
+          padding-left 0rem
+          border-radius:0.05rem
+          //盒子阴影修饰作用,自己随意
+          box-shadow: 0 0 0.05rem #ccc
+          position: relative
+          border none
+          select
+            //清除select的边框样式
+            border: none
+            //清除select聚焦时候的边框颜色
+            outline: none
+            //将select的宽高等于div的宽高
+            width: 100%
+            height: 0.8rem
+            line-height: 0.8rem
+            //隐藏select的下拉图标
+            appearance: none
+            -webkit-appearance: none
+            -moz-appearance: none
+            //通过padding-left的值让文字居中
+            padding-left: 1rem
+
+          //使用伪类给select添加自己想用的图标
+          .downicon
+            content: ">"
+            width: 0.4rem
+            height: 0.4rem
+            /*background: url("../assets/imgs/set.jpg") no-repeat center*/
+            //通过定位将图标放在合适的位置
+            position: absolute
+            right: 1rem
+            top: 40%
+            margin-top -0.2rem
+            //给自定义的图标实现点击下来功能
+            pointer-events: none
         .billsign
           display flex
-        span
-          padding 0.1rem
-          border 0.02rem solid #999
-          margin 0.1rem
-          .bankradio
-            display: none
-          .b-radio
-            display: inline-block
-            border:1px solid #ccc
-            width:16px
-            height: 16px
-            border-radius:2px
-            vertical-align: middle
-            margin-right: 5px
-            position: relative
-          .b-radio:before
-            content: ''
-            font-size: 0
-            width: 10px
-            height: 10px
-            background: rgb(143, 188, 238)
-            position: absolute
-            left 50%
-            top 50%
-            margin-left -5px
-            margin-top -5px
-            border-radius 2px
-            display none
-          .bankradio:checked~.b-radio:before
-            display block
-
-
+          flex-wrap wrap
+          justify-content  center
+          label
+            padding 0.1rem
+            border 0.02rem solid #999
+            margin 0.1rem
+            font-size 0.4rem
+            text-align center
+            border-radius 0.05rem
+            width 1rem
+            .bankradio
+              display: none
+            .b-radio
+              display: inline-block
+              border:0.02rem solid #ccc
+              width:0.4rem
+              height: 0.4rem
+              border-radius:0.04rem
+              vertical-align: middle
+              position: relative
+            .b-radio:before
+              content: ''
+              font-size: 0
+              width: 0.2rem
+              height: 0.2rem
+              background: rgb(143, 188, 238)
+              position: absolute
+              left 50%
+              top 50%
+              margin-left -0.1rem
+              margin-top -0.1rem
+              border-radius 0.04rem
+              display none
+            .bankradio:checked+.b-radio:before
+              display block
+            .signcon
+              color #999
+              font-size 0.4rem
+              margin-top 0.1rem
+          .addsign
+            border none
+            overflow visible
+          .addsign>span
+            display inline-block
+            color red
+            width 1rem
+            height 1rem
+            font-size 0.9rem
+      .inputsign
+        border 0.02rem dotted #999
+        padding 0.2rem
 
 </style>
