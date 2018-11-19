@@ -2,10 +2,10 @@
   <div class="logincon">
     <div class="formcon">
       <div class="formgroup">
-        <input class="username" name="username"  type="text" placeholder="输入用户名或手机号"/>
+        <input class="username" name="username" v-model="username"  type="text" placeholder="输入用户名或手机号"/>
       </div>
       <div class="formgroup">
-        <input class="pwd" name="pwd" type="password" placeholder="输入您的密码"/>
+        <input class="pwd" name="pwd" v-model="pwd" type="password" placeholder="输入您的密码"/>
       </div>
       <div class="formbtn">
         <button class="confirmbtn" @click="billlogin">登录</button>
@@ -18,12 +18,26 @@
 <script>
   import {login} from '../assets/js/api'
     export default {
+      data(){
+        return {
+          username:"",
+          pwd:""
+        }
+      },
       methods:{
         billlogin:function(){
-          var data={
-            nickname:"cyan1",
-            phone:"17600483029",
-            password:"cyan"
+          if(this.username==""){
+            this.$layer.alert("用户名不能为空")
+            return
+          }else if(this.pwd==""){
+            this.$layer.alert("密码不能为空")
+            return
+          }else{
+            var data={
+              nickname:this.username,
+              phone:this.username,
+              password:this.pwd
+            }
           }
           login(data).then((res)=>{
             console.log(res)
