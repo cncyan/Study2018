@@ -9,7 +9,7 @@ function  fn(sql,callback) {
         //数据库的地址
         user:"root",
         //数据库密码（本地的为空，没有密码）
-        password:"root",
+        password:"cyancyan",
         //数据库端口
         port:"3306",
         //使用哪个数据库

@@ -80,6 +80,7 @@
 <script>
   import billlist from '../components/billlist.vue'
   import billfoot from '../components/billfoot.vue'
+  import {getbillinfo} from "../assets/js/api";
   export default {
     components:{
       billlist,
@@ -101,50 +102,48 @@
           getmoney:{
               title:"收入",
               mday:"最近30天",
-              datalist:[
-                  {
-                      id:'1',
-                      money:'123',
-                      date:'2018.01.11',
-                      come:"进入支付宝",
-                      sign:'吃',
-                      desc:'好的可以还行加油'
-                  },
-                  {
-                      id:'2',
-                      money:'123',
-                      date:'2018.01.11',
-                      come:"进入支付宝",
-                      sign:'吃',
-                      desc:'好的可以还行加油'
-                  }
-              ]
+              datalist:[]
 
           },
           gavemoney:{
               title:"支出",
               mday:"最近30天",
-              datalist:[
-                  {
-                      id:'1',
-                      money:'123',
-                      date:'2018.01.11',
-                      come:"进入支付宝",
-                      sign:'吃',
-                      desc:'好的可以还行加油'
-                  },
-                  {
-                      id:'2',
-                      money:'123',
-                      date:'2018.01.11',
-                      come:"进入支付宝",
-                      sign:'吃',
-                      desc:'好的可以还行加油'
-                  }
-              ]
+              datalist:[]
 
           }
       }
+    },
+    mounted(){
+        var _this=this
+      getbillinfo().then(function(res,err){
+          console.log(res)
+          if(res.code==0){
+              res.data.forEach((item,index)=>{
+              item.date=billsdk.format(item.date)
+              if(item.type == 0){
+                  if(item.come==0){
+                      item.come="来自支付宝"
+                  }else if(item.come==1){
+                      item.come="来自微信"
+                  }else{
+                      item.come="记录账单"
+                  }
+                  _this.gavemoney.datalist.push(item)
+              }else{
+                  if(item.come==0){
+                      item.come="归入支付宝"
+                  }else if(item.come==1){
+                      item.come="归入微信"
+                  }else{
+                      item.come="其他账户"
+                  }
+                  _this.getmoney.datalist.push(item)
+              }
+              })
+          }else{
+              console.log("no data")
+          }
+      })
     },
     methods:{
       addbill:function(){

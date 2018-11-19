@@ -5,8 +5,8 @@ const express = require("express"),
 const bodyParser = require("body-parser");
 const sql = require('./mysql');
 var resu={
-    code:0,
-    msg:'请求成功',
+    code:2,
+    msg:'',
     data:[]
 }
 app.use(bodyParser.json());
@@ -15,11 +15,18 @@ app.use("*",(req,res,next)=>{
     res.header("Access-Control-Allow-Origin","*");
 next()
 })
-app.get('/test',(req,res)=>{
-    sql("select * from billuser",(err,result)=>{
-    console.log(err)
-    console.log(result)
-    res.send(result)
+app.get('/bill/info',(req,res)=>{
+    sql("select * from billcon",(err,result)=>{
+        if(result!=""){
+            resu.code=0
+            resu.msg='success'
+            resu.data=result
+        }else{
+            resu.code=-1
+            resu.msg='empty'
+            resu.data=result
+        }
+    res.send(resu)
 })
 })
 app.post('/user/login', (req,res)=>{
@@ -28,17 +35,18 @@ let nickname = req.body['nickname'],
     pwd =req.body['password'];
 sql('select * from billuser where nickname="'+nickname+'" or phone="'+phone+'"',(err,result)=>{
     if(result!=""){
-        resu.code=0
         if(result[0].password==pwd){
-            resu.msg="请求成功"
+            resu.code=0
+            resu.msg="success"
             resu.data=result
         }else{
-            resu.msg="密码错误"
+            resu.code=-1
+            resu.msg="wrongpwd"
             resu.data=[]
         }
     }else{
         resu.code=-1
-        resu.msg="用户不存在"
+        resu.msg="nouser"
         resu.data=[]
     }
     res.send(resu)

@@ -41,6 +41,15 @@
           }
           login(data).then((res)=>{
             console.log(res)
+            if(res.code==0){
+                this.$router.replace('/')
+            }else{
+                if(res.msg=="wrongpwd"){
+                    this.$layer.alert("密码错误，请重新输入")
+                }else if(res.msg='nouser'){
+                    this.$layer.alert("用户不存在，请输入正确账号")
+                }
+            }
           })
         }
       }
@@ -48,9 +57,14 @@
 </script>
 
 <style lang="stylus">
-  /*@import "../assets/css/base.styl";*/
+  /*@import "../assets/css/base.styl"*/
   .logincon
     border:1px solid $mainColor
+    position: absolute
+    width 100%
+    box-sizing border-box
+    top 50%
+    margin-top -4rem
     .formcon
       margin auto
       display flex
@@ -61,8 +75,9 @@
         width 100%
         margin 0.2rem auto
       .formgroup>input
-        height 0.8rem
-        width 80%
+        height 1.2rem
+        width 100%
+        box-sizing border-box
         margin auto
         border 0.01rem solid #999
         font-size 0.4rem
