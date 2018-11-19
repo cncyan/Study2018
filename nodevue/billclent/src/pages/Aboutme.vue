@@ -6,21 +6,21 @@
                 <router-link to="/set" class="iconfont icon-icon-test setimg"></router-link>
             </div>
             <div class="info">
-                <img class="myicon" src="../assets/imgs/set.jpg"/>
+                <img class="myicon" src="../assets/imgs/usericon.png"/>
                 <span class="mynickname">cyancyan</span>
             </div>
         </div>
         <div class="memenu">
             <div class="meitem" @click="showali">
-                <img src="../assets/imgs/set.jpg"/>
+                <div style="color:#56abe4" class="iconfont icon-alipay"></div>
                 <span>我的支付宝</span>
             </div>
             <div class="meitem" @click="showwe">
-                <img src="../assets/imgs/set.jpg"/>
+                <div style="color:#00cd0c" class="iconfont icon-wechat"></div>
                 <span>我的微信</span>
             </div>
             <div class="meitem">
-                <img src="../assets/imgs/set.jpg"/>
+                <div class="iconfont icon-wechat"></div>
                 <span>我的微信</span>
             </div>
         </div>
@@ -72,7 +72,7 @@
     box-sizing border-box
     position relative
     .mebg
-        background url("../assets/imgs/set.jpg")
+        background url("../assets/imgs/billuserbg.png")
         opacity 0.3
         width 100%
         height 100%
@@ -115,9 +115,11 @@
         width 35%
         display inline-block
         margin 7.5%
-        &>img
+        &>div
             width 80%
             height 1.8rem
+            font-size 1.6rem
+            text-align center
             display block
             margin auto
         &>span

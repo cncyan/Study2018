@@ -13,7 +13,7 @@ function  fn(sql,callback) {
         //数据库端口
         port:"3306",
         //使用哪个数据库
-        database:"text"
+        database:"bill"
     });
 // 连接信息保存起来
 

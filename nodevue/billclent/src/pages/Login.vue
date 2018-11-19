@@ -2,13 +2,13 @@
   <div class="logincon">
     <div class="formcon">
       <div class="formgroup">
-        <input class="username" name="username" type="text" placeholder="输入用户名或手机号"/>
+        <input class="username" name="username"  type="text" placeholder="输入用户名或手机号"/>
       </div>
       <div class="formgroup">
         <input class="pwd" name="pwd" type="password" placeholder="输入您的密码"/>
       </div>
       <div class="formbtn">
-        <button class="confirmbtn">登录</button>
+        <button class="confirmbtn" @click="billlogin">登录</button>
         <button class="maybtn"><router-link to="/register">注册</router-link></button>
       </div>
     </div>
@@ -16,11 +16,16 @@
 </template>
 
 <script>
-  import {infos} from '../assets/js/api'
+  import {login} from '../assets/js/api'
     export default {
       methods:{
-        login:function(){
-          infos().then((res)=>{
+        billlogin:function(){
+          var data={
+            nickname:"cyan1",
+            phone:"17600483029",
+            password:"cyan"
+          }
+          login(data).then((res)=>{
             console.log(res)
           })
         }

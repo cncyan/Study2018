@@ -4,6 +4,11 @@ const express = require("express"),
 
 const bodyParser = require("body-parser");
 const sql = require('./mysql');
+var resu={
+    code:0,
+    msg:'请求成功',
+    data:[]
+}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use("*",(req,res,next)=>{
@@ -11,23 +16,39 @@ app.use("*",(req,res,next)=>{
 next()
 })
 app.get('/test',(req,res)=>{
-    sql("select * from user",(err,result)=>{
+    sql("select * from billuser",(err,result)=>{
     console.log(err)
     console.log(result)
     res.send(result)
 })
 })
-app.post('/abc', (req,res)=>{
-    console.log(req.body)
-const id = req.body['id'],
-    name = req.body['name'];
-sql(`insert into user (id,name) values ('${id}','${name}')`,(err,result)=>{
-    if(err){
-        res.send({code:0})
-    }  else{
-        res.send({code:1})
-}
+app.post('/user/login', (req,res)=>{
+let nickname = req.body['nickname'],
+    phone = req.body['phone'],
+    pwd =req.body['password'];
+sql('select * from billuser where nickname="'+nickname+'" or phone="'+phone+'"',(err,result)=>{
+    if(result!=""){
+        resu.code=0
+        if(result[0].password==pwd){
+            resu.msg="请求成功"
+            resu.data=result
+        }else{
+            resu.msg="密码错误"
+            resu.data=[]
+        }
+    }else{
+        resu.code=-1
+        resu.msg="用户不存在"
+        resu.data=[]
+    }
+    res.send(resu)
 })
+//sql(`insert into user (id,name) values ('${id}','${name}')`,(err,result)=>{
+//    if(err){
+//        res.send({code:0})
+//    }  else{
+//        res.send({code:1})
+//}
 })
 
 app.listen(8899,function () {

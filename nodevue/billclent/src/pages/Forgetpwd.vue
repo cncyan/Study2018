@@ -15,14 +15,9 @@
 </template>
 
 <script>
-    import {infos} from '../assets/js/api'
     export default {
         methods:{
-            login:function(){
-                infos().then((res)=>{
-                    console.log(res)
-                })
-            }
+
         }
     }
 </script>

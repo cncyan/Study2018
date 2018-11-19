@@ -64,8 +64,8 @@
       <div class="inputgroup inputsign" v-if="isaddsign">
         <label class="othersignlabel">新标签:</label>
         <input class="othersign" maxlength="2" placeholder="最多输入两个字" type="text" name="othersign" />
-        <button class="signok" @click="canceladdsign">取消</button>
-        <button class="signok" @click="addsign">完成</button>
+        <span style="color:red" class="iconfont icon-icon_cancel signok" @click="addsign"></span>
+        <span style="color:green;font-size: 0.72rem" class="iconfont icon-oksignlarge signok" @click="canceladdsign"></span>
       </div>
       <div class="inputgroup">
         <label>备注</label>
@@ -256,6 +256,7 @@
           font-size 0.3rem
           text-align right
           padding-right 0.3rem
+          width 20%
         label
           font-size 0.5rem
           width 30%
@@ -267,8 +268,12 @@
           border-radius 0.1rem
           flex 1
           padding-left 0.2rem
+        .othersign
+          width 25%
         .signok
-          min-width 1.3rem
+          display inline-block
+          margin-left 0.2rem
+          font-size 0.8rem
         .billtype
           //用div的样式代替select的样式
           /*width: */
